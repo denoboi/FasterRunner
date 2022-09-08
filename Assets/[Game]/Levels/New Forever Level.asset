@@ -13,9 +13,26 @@ MonoBehaviour:
   m_Name: New Forever Level
   m_EditorClassIdentifier: 
   _enabled: 1
-  _pathGenerator: {fileID: 0}
+  _pathGenerator: {fileID: 11400000, guid: b2aaae5f06f86504d8284a5012e5dd54, type: 2}
   _sequenceCollection:
     sequences:
+    - enabled: 1
+      name: Sequence
+      isCustom: 0
+      customSequence: {fileID: 0}
+      segments:
+      - nested: 0
+        randomPickChance: 1
+        _prefab: {fileID: 2543243275075991476, guid: e7c37c8bc74bf1f4e8b4071e6f014975, type: 3}
+        _segmentPool: []
+        _pool: 0
+        _poolParent: {fileID: 0}
+      customPathGenerator: {fileID: 11400000, guid: b2aaae5f06f86504d8284a5012e5dd54, type: 2}
+      spawnCount: 3
+      type: 1
+      randomizer: {fileID: 11400000, guid: fb600be43607d7e47822c78754644d57, type: 2}
+      customShuffle: {fileID: 0}
+      preventRepeat: 0
     - enabled: 1
       name: Sequence
       isCustom: 0
@@ -27,12 +44,17 @@ MonoBehaviour:
         _segmentPool: []
         _pool: 0
         _poolParent: {fileID: 0}
-      - nested: 0
-        randomPickChance: 1
-        _prefab: {fileID: 2543243275075991476, guid: e7c37c8bc74bf1f4e8b4071e6f014975, type: 3}
-        _segmentPool: []
-        _pool: 0
-        _poolParent: {fileID: 0}
+      customPathGenerator: {fileID: 0}
+      spawnCount: 6
+      type: 1
+      randomizer: {fileID: 11400000, guid: fb600be43607d7e47822c78754644d57, type: 2}
+      customShuffle: {fileID: 0}
+      preventRepeat: 0
+    - enabled: 1
+      name: Sequence
+      isCustom: 0
+      customSequence: {fileID: 0}
+      segments:
       - nested: 0
         randomPickChance: 1
         _prefab: {fileID: 919132148210751173, guid: 0363a7d0d1b2c7a46b44df1e3112c84f, type: 3}
@@ -40,9 +62,9 @@ MonoBehaviour:
         _pool: 0
         _poolParent: {fileID: 0}
       customPathGenerator: {fileID: 0}
-      spawnCount: 1
-      type: 0
-      randomizer: {fileID: 0}
+      spawnCount: 9
+      type: 1
+      randomizer: {fileID: 11400000, guid: fb600be43607d7e47822c78754644d57, type: 2}
       customShuffle: {fileID: 0}
       preventRepeat: 0
     - enabled: 1
@@ -61,7 +83,28 @@ MonoBehaviour:
       segmentIndex: -1
     - parent: -1
       segmentIndex: -1
+    - parent: -1
+      segmentIndex: -1
+    - parent: -1
+      segmentIndex: -1
     allSequences:
+    - enabled: 1
+      name: Sequence
+      isCustom: 0
+      customSequence: {fileID: 0}
+      segments:
+      - nested: 0
+        randomPickChance: 1
+        _prefab: {fileID: 2543243275075991476, guid: e7c37c8bc74bf1f4e8b4071e6f014975, type: 3}
+        _segmentPool: []
+        _pool: 0
+        _poolParent: {fileID: 0}
+      customPathGenerator: {fileID: 11400000, guid: b2aaae5f06f86504d8284a5012e5dd54, type: 2}
+      spawnCount: 3
+      type: 1
+      randomizer: {fileID: 11400000, guid: fb600be43607d7e47822c78754644d57, type: 2}
+      customShuffle: {fileID: 0}
+      preventRepeat: 0
     - enabled: 1
       name: Sequence
       isCustom: 0
@@ -73,12 +116,17 @@ MonoBehaviour:
         _segmentPool: []
         _pool: 0
         _poolParent: {fileID: 0}
-      - nested: 0
-        randomPickChance: 1
-        _prefab: {fileID: 2543243275075991476, guid: e7c37c8bc74bf1f4e8b4071e6f014975, type: 3}
-        _segmentPool: []
-        _pool: 0
-        _poolParent: {fileID: 0}
+      customPathGenerator: {fileID: 0}
+      spawnCount: 6
+      type: 1
+      randomizer: {fileID: 11400000, guid: fb600be43607d7e47822c78754644d57, type: 2}
+      customShuffle: {fileID: 0}
+      preventRepeat: 0
+    - enabled: 1
+      name: Sequence
+      isCustom: 0
+      customSequence: {fileID: 0}
+      segments:
       - nested: 0
         randomPickChance: 1
         _prefab: {fileID: 919132148210751173, guid: 0363a7d0d1b2c7a46b44df1e3112c84f, type: 3}
@@ -86,9 +134,9 @@ MonoBehaviour:
         _pool: 0
         _poolParent: {fileID: 0}
       customPathGenerator: {fileID: 0}
-      spawnCount: 1
-      type: 0
-      randomizer: {fileID: 0}
+      spawnCount: 9
+      type: 1
+      randomizer: {fileID: 11400000, guid: fb600be43607d7e47822c78754644d57, type: 2}
       customShuffle: {fileID: 0}
       preventRepeat: 0
     - enabled: 1
