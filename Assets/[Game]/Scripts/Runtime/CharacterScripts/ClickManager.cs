@@ -6,10 +6,10 @@ public class ClickManager : MonoBehaviour
 {
    public static ClickManager Instance;
    private float _clickCount;
-   private float _speed;
+   private float _speed = 1;
 
    public float Speed { get; set; }
-
+   public float SpeedIncrease { get; set; }
    private void Awake()
    {
       Instance = this;
@@ -26,7 +26,7 @@ public class ClickManager : MonoBehaviour
       if (Input.GetMouseButtonDown(0))
       {
          Speed += 1;
-         EventManager.OnClick.Invoke();
+         EventManager.OnClick.Invoke(); //To update texts.
       }
    }
 

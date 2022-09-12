@@ -6,5 +6,7 @@ using UnityEngine.Events;
 public static class EventManager
 {
     public static UnityEvent OnClick = new UnityEvent();
+    public static UnityEvent OnCountDownEnded = new UnityEvent();
+    
     
 }

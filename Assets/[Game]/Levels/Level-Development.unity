@@ -162,7 +162,7 @@ MonoBehaviour:
   _loopSegmentLogic: 0
   _levelCollection:
   - {fileID: 11400000, guid: 3a469011bb1cdd94d9a08b60002a259e, type: 2}
-  _levelIteration: 2
+  _levelIteration: 1
   _levelRandomizer: {fileID: 0}
   _generationRandomizer: {fileID: 11400000, guid: fb600be43607d7e47822c78754644d57, type: 2}
   _startLevel: 0
@@ -372,7 +372,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677471380}
-  m_LocalRotation: {x: 0.26693356, y: -0.000000028720944, z: 0.00000000795524, w: 0.96371496}
+  m_LocalRotation: {x: 0.26693356, y: 0.000000028720944, z: -0.00000000795524, w: 0.96371496}
   m_LocalPosition: {x: 0, y: 7, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -658,11 +658,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5841760635998385103, guid: ea46818347d5a954dae9961068946325, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000028720944
+      value: 0.000000028720944
       objectReference: {fileID: 0}
     - target: {fileID: 5841760635998385103, guid: ea46818347d5a954dae9961068946325, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00000000795524
+      value: -0.00000000795524
       objectReference: {fileID: 0}
     - target: {fileID: 5841760635998385103, guid: ea46818347d5a954dae9961068946325, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -7,23 +7,25 @@ using UnityEngine.UI;
 public class SpeedHandler : MonoBehaviour
 {
     public Slider Slider;
-    public PlayerSpeed PlayerSpeed;
-    
+    public PlayerController PlayerController;
+
     private void OnSceneLoad()
     {
         Slider = GetComponent<Slider>();
-        PlayerSpeed = FindObjectOfType<PlayerSpeed>();
+        PlayerController = FindObjectOfType<PlayerController>();
     }
 
     private void OnEnable()
     {
-        SceneController.Instance.OnSceneLoaded.AddListener(OnSceneLoad);
+        //SceneController.Instance.OnSceneLoaded.AddListener(OnSceneLoad);
+        EventManager.OnCountDownEnded.AddListener(OnSceneLoad);
     }
 
 
     private void OnDisable()
     {
-        SceneController.Instance.OnSceneLoaded.RemoveListener(OnSceneLoad);
+        EventManager.OnCountDownEnded.AddListener(OnSceneLoad);
+        //SceneController.Instance.OnSceneLoaded.RemoveListener(OnSceneLoad);
     }
 
 
@@ -37,13 +39,6 @@ public class SpeedHandler : MonoBehaviour
         if (Slider == null)
             return;
 
-       
-        // if (Slider.value > 4)
-        // {
-        //     PlayerSpeed.SpeedDenominator += 0.1f;
-        // }
-        // else
-            Slider.value = PlayerSpeed.RunnerSpeed();
-
+        Slider.value = PlayerController.RunnerSpeed();
     }
 }
