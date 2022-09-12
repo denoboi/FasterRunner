@@ -11,8 +11,8 @@ public class PlayerController : MonoBehaviour
     public Runner Runner => _runner == null ? _runner = GetComponent<Runner>() : _runner;
     
 
-    private float _speedMultiplier = 5f;
-    private float _speedDenominator = 0.2f;
+    private float _speedMultiplier = 100f;
+    private float _speedDenominator = 10f;
 
     public bool IsControlable { get; set; }
 
@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnDisable()
     {
+        if (Managers.Instance == null)
+            return;
+        
         LevelManager.Instance.OnLevelStart.RemoveListener(OnLevelStart);
         EventManager.OnCountDownEnded.RemoveListener(OnCountDownEnded);
     }
@@ -56,6 +59,7 @@ public class PlayerController : MonoBehaviour
     {
         
         SpeedIncrease();
+        SpeedDecrease();
     }
 
    
@@ -70,7 +74,7 @@ public class PlayerController : MonoBehaviour
         if (!GameManager.Instance.IsGameStarted) return;
         if (Input.GetMouseButtonDown(0))
         {
-            Runner.followSpeed += SpeedMultiplier;
+            Runner.followSpeed += SpeedMultiplier * Time.deltaTime;
             Debug.Log(Runner.followSpeed);
         }
        

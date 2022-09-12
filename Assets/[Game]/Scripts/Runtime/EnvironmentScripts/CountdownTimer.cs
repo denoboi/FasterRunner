@@ -25,6 +25,8 @@ public class CountdownTimer : MonoBehaviour
 
     private void OnDisable()
     {
+        if (Managers.Instance == null)
+            return;
         LevelManager.Instance.OnLevelStart.RemoveListener(StartCountDown);
     }
 

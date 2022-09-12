@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SpeedTexts : MonoBehaviour
+public class SpeedOMeterTexts : MonoBehaviour
 {
     public List<TextMeshProUGUI> TextMeshProUGUIS = new List<TextMeshProUGUI>();
     
