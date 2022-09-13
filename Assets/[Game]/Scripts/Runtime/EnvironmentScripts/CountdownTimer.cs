@@ -49,7 +49,7 @@ public class CountdownTimer : MonoBehaviour
             IsCountDowning = true;
         }
 
-        EventManager.OnCountDownEnded.Invoke();
+        EventManager.OnFirstCountDownEnded.Invoke();
         IsCountDowning = false; // for playercontroller script, in order to allow moving after countdown
         TMPro.text = "Run!";
         yield return new WaitForSeconds(1);

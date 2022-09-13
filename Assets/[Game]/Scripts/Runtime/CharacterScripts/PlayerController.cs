@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         LevelManager.Instance.OnLevelStart.AddListener(OnLevelStart);
-        EventManager.OnCountDownEnded.AddListener(OnCountDownEnded);
+        EventManager.OnFirstCountDownEnded.AddListener(OnCountDownEnded);
     }
 
     private void OnDisable()
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
             return;
 
         LevelManager.Instance.OnLevelStart.RemoveListener(OnLevelStart);
-        EventManager.OnCountDownEnded.RemoveListener(OnCountDownEnded);
+        EventManager.OnFirstCountDownEnded.RemoveListener(OnCountDownEnded);
     }
 
     private void OnLevelStart()
@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
         if (!GameManager.Instance.IsGameStarted) return;
         if (Input.GetMouseButtonDown(0))
         {
-            Runner.followSpeed += SpeedMultiplier * Time.deltaTime;
+            Runner.followSpeed += SpeedMultiplier * Time.deltaTime * 2;
             Debug.Log(Runner.followSpeed);
             Debug.Log(SpeedMultiplier);
         }

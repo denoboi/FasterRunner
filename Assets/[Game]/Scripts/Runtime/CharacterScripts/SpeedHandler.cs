@@ -18,13 +18,13 @@ public class SpeedHandler : MonoBehaviour
     private void OnEnable()
     {
         //SceneController.Instance.OnSceneLoaded.AddListener(OnSceneLoad);
-        EventManager.OnCountDownEnded.AddListener(OnSceneLoad);
+        EventManager.OnFirstCountDownEnded.AddListener(OnSceneLoad);
     }
 
 
     private void OnDisable()
     {
-        EventManager.OnCountDownEnded.AddListener(OnSceneLoad);
+        EventManager.OnFirstCountDownEnded.AddListener(OnSceneLoad);
         //SceneController.Instance.OnSceneLoaded.RemoveListener(OnSceneLoad);
     }
 

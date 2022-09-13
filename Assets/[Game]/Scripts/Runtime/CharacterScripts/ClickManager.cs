@@ -23,20 +23,17 @@ public class ClickManager : IdleStatObjectBase
    
    private void OnEnable()
    {
-      EventManager.OnCountDownEnded.AddListener(OnCountDownEnded); //when first countdown ends, stop speed upgrading
+      EventManager.OnFirstCountDownEnded.AddListener(OnCountDownEnded); //when first countdown ends, stop speed upgrading
    }
 
    private void OnDisable()
    {
       if (Managers.Instance == null)
          return;
-      EventManager.OnCountDownEnded.RemoveListener(OnCountDownEnded);
+      EventManager.OnFirstCountDownEnded.RemoveListener(OnCountDownEnded);
    }
 
-   public override void UpdateStat(string id)
-   {
-      throw new NotImplementedException();
-   }
+  
 
 
    private void Update()
@@ -59,6 +56,11 @@ public class ClickManager : IdleStatObjectBase
          Speed += (float)IdleStat.CurrentValue;
          EventManager.OnClick.Invoke(); //To update texts.
       }
+   }
+   
+   public override void UpdateStat(string id)
+   {
+      throw new NotImplementedException();
    }
 
   

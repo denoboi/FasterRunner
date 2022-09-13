@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4971594290552944009, guid: b0a9cac77cad7dc44afd5771c7f205e1, type: 3}
+  - {fileID: 2100000, guid: 5690f0a47dba7417a919ddf3cf87e776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -160,7 +160,7 @@ MonoBehaviour:
     min: {x: -5, y: -5.000004, z: -100}
     size: {x: 10, y: 5.000008, z: 200}
   builders: []
-  unpacked: 0
+  unpacked: 1
   alwaysDraw: 0
   drawGeneratedSpline: 1
   drawGeneratedSamples: 1
@@ -168,4 +168,4 @@ MonoBehaviour:
   drawEntranceAndExit: 1
   drawBounds: 1
   drawCustomPaths: 1
-  editorChildCount: 1
+  editorChildCount: 0
