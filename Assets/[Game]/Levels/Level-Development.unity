@@ -152,17 +152,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c623274580f39f948ab0f5c9019cff7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _generateSegmentsAhead: 6
-  _activateSegmentsAhead: 4
+  _generateSegmentsAhead: 10
+  _activateSegmentsAhead: 1
   _loadTimeout: 1
-  _maxSegments: 10
+  _maxSegments: 100
   _buildOnAwake: 1
   _multithreaded: 1
   _useUnloadUnusedAssets: 0
   _loopSegmentLogic: 0
   _levelCollection:
   - {fileID: 11400000, guid: 3a469011bb1cdd94d9a08b60002a259e, type: 2}
-  _levelIteration: 1
+  _levelIteration: 2
   _levelRandomizer: {fileID: 0}
   _generationRandomizer: {fileID: 11400000, guid: fb600be43607d7e47822c78754644d57, type: 2}
   _startLevel: 0
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e4e00c24dbd7f4c89b5d9105542b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleStat: {fileID: 0}
+  idleStat: {fileID: 11400000, guid: 9f152970f0fdb5b4bb67d46b387f052b, type: 2}
 --- !u!108 &915662021 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 1642539459268862323, guid: 9b5079072683a4e479d1910c9bc896c2, type: 3}
@@ -327,9 +327,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 1
   m_FollowOffset: {x: 0, y: 6, z: -10}
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
+  m_XDamping: 0
+  m_YDamping: 0
+  m_ZDamping: 0
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -351,8 +351,8 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_HorizontalDamping: 0.5
-  m_VerticalDamping: 0.5
+  m_HorizontalDamping: 0
+  m_VerticalDamping: 0
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_DeadZoneWidth: 0
@@ -433,7 +433,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677471380}
-  m_LocalRotation: {x: 0.26693356, y: 0.000000028720944, z: -0.00000000795524, w: 0.96371496}
+  m_LocalRotation: {x: 0.2669336, y: 3.4238033e-15, z: -1.836517e-15, w: 0.96371496}
   m_LocalPosition: {x: 0, y: 7, z: -8.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -702,15 +702,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5841760635998385103, guid: ea46818347d5a954dae9961068946325, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.26693356
+      value: 0.2669336
       objectReference: {fileID: 0}
     - target: {fileID: 5841760635998385103, guid: ea46818347d5a954dae9961068946325, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000028720944
+      value: 3.4238033e-15
       objectReference: {fileID: 0}
     - target: {fileID: 5841760635998385103, guid: ea46818347d5a954dae9961068946325, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000000795524
+      value: -1.836517e-15
       objectReference: {fileID: 0}
     - target: {fileID: 5841760635998385103, guid: ea46818347d5a954dae9961068946325, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

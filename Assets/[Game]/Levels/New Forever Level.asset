@@ -23,7 +23,7 @@ MonoBehaviour:
       segments:
       - nested: 0
         randomPickChance: 1
-        _prefab: {fileID: 919132147614052810, guid: 49fb5ae639aa9004abb8f8ca1f0aa5be, type: 3}
+        _prefab: {fileID: 919132148898593187, guid: 7c9bfdeddd56afe4b8e59c968c92277c, type: 3}
         _segmentPool: []
         _pool: 0
         _poolParent: {fileID: 0}
@@ -40,7 +40,7 @@ MonoBehaviour:
       segments:
       - nested: 0
         randomPickChance: 1
-        _prefab: {fileID: 919132148234438824, guid: e9d840b8a34ab7247a4c643bf09eaeb3, type: 3}
+        _prefab: {fileID: 919132148898593187, guid: 7c9bfdeddd56afe4b8e59c968c92277c, type: 3}
         _segmentPool: []
         _pool: 0
         _poolParent: {fileID: 0}
@@ -57,7 +57,7 @@ MonoBehaviour:
       segments:
       - nested: 0
         randomPickChance: 1
-        _prefab: {fileID: 919132147614052810, guid: 49fb5ae639aa9004abb8f8ca1f0aa5be, type: 3}
+        _prefab: {fileID: 919132148898593187, guid: 7c9bfdeddd56afe4b8e59c968c92277c, type: 3}
         _segmentPool: []
         _pool: 0
         _poolParent: {fileID: 0}
@@ -82,7 +82,7 @@ MonoBehaviour:
       segments:
       - nested: 0
         randomPickChance: 1
-        _prefab: {fileID: 919132147614052810, guid: 49fb5ae639aa9004abb8f8ca1f0aa5be, type: 3}
+        _prefab: {fileID: 919132148898593187, guid: 7c9bfdeddd56afe4b8e59c968c92277c, type: 3}
         _segmentPool: []
         _pool: 0
         _poolParent: {fileID: 0}
@@ -99,7 +99,7 @@ MonoBehaviour:
       segments:
       - nested: 0
         randomPickChance: 1
-        _prefab: {fileID: 919132148234438824, guid: e9d840b8a34ab7247a4c643bf09eaeb3, type: 3}
+        _prefab: {fileID: 919132148898593187, guid: 7c9bfdeddd56afe4b8e59c968c92277c, type: 3}
         _segmentPool: []
         _pool: 0
         _poolParent: {fileID: 0}
@@ -116,7 +116,7 @@ MonoBehaviour:
       segments:
       - nested: 0
         randomPickChance: 1
-        _prefab: {fileID: 919132147614052810, guid: 49fb5ae639aa9004abb8f8ca1f0aa5be, type: 3}
+        _prefab: {fileID: 919132148898593187, guid: 7c9bfdeddd56afe4b8e59c968c92277c, type: 3}
         _segmentPool: []
         _pool: 0
         _poolParent: {fileID: 0}

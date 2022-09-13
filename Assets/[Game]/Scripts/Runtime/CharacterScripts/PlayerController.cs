@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public float SpeedMultiplier
     {
         get => _speedMultiplier = ClickManager.Instance.Speed;
-        set { _speedMultiplier = value; }
+       
     }
 
     public float SpeedDenominator
@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
         if (!GameManager.Instance.IsGameStarted) return;
         if (Input.GetMouseButtonDown(0))
         {
-            Runner.followSpeed += SpeedMultiplier * Time.deltaTime * 100;
+            Runner.followSpeed += SpeedMultiplier * Time.deltaTime;
             Debug.Log(Runner.followSpeed);
             Debug.Log(SpeedMultiplier);
         }
@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
     private void SpeedDecrease()
     {
-        Runner.followSpeed -= SpeedDenominator * Time.deltaTime * 10;
+        Runner.followSpeed -= SpeedDenominator * Time.deltaTime / 10;
         if (Runner.followSpeed <= 0)
             Runner.followSpeed = 0;
     }

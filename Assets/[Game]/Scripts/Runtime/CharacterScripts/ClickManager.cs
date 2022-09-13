@@ -56,7 +56,7 @@ public class ClickManager : IdleStatObjectBase
          return;
       if (Input.GetMouseButtonDown(0))
       {
-         Speed += 1;
+         Speed += (float)IdleStat.CurrentValue;
          EventManager.OnClick.Invoke(); //To update texts.
       }
    }
