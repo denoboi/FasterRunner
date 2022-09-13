@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Dreamteck/Forever/Examples.unitypackage.meta
+guid: 6e795e4dbd49b2148bfaad10c1813ef2
+DefaultImporter:
+========
 guid: 557a722660e0bf347a38c87628e1c671
 NativeFormatImporter:
+>>>>>>>> FR-Art:Assets/[Game]/Graphics/3DGraphics/Environment/EnvironmentA/Materials/Place_Blue.mat.meta
   externalObjects: {}
   mainObjectFileID: 2100000
   userData: 

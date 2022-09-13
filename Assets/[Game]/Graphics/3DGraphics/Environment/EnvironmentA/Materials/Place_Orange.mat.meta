@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Dreamteck/Forever/User Manual.url.meta
+guid: 961dbbae6c1b75b45bfb6952d528dfef
+DefaultImporter:
+========
 guid: 562d286eb709ee74883cd256057aae23
 NativeFormatImporter:
+>>>>>>>> FR-Art:Assets/[Game]/Graphics/3DGraphics/Environment/EnvironmentA/Materials/Place_Orange.mat.meta
   externalObjects: {}
   mainObjectFileID: 2100000
   userData: 
