@@ -1,5 +1,86 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!136 &460267550
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2161010723416862557}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.27
+  m_Height: 2.88
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &460267548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2161010723416862557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea2fa2f688cc3ee4ca853244d65c4f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateMode: 0
+  startPercent: 0.10000000149011612
+  startDistance: 0.1
+  startMode: 2
+  followSpeed: 0
+  follow: 1
+  isPlayer: 1
+  loop: 0
+  physicsMode: 0
+  _motion:
+    enabled: 1
+    offset: {x: 0, y: 0}
+    useSplineSizes: 1
+    rotationOffset: {x: 0, y: 0, z: 0}
+    baseScale: {x: 1, y: 1, z: 1}
+    SplineSample:
+      position: {x: 0, y: 0, z: 0}
+      up: {x: 0, y: 1, z: 0}
+      forward: {x: 0, y: 0, z: 1}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      size: 1
+      percent: 0
+    applyPositionX: 0
+    applyPositionY: 0
+    applyPositionZ: 1
+    applyRotationX: 1
+    applyRotationY: 1
+    applyRotationZ: 1
+    applyScaleX: 0
+    applyScaleY: 0
+    applyScaleZ: 0
+--- !u!114 &460267549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2161010723416862557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b5d1296cfebdde439fb48dc4d1df066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &460267551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2161010723416862557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f27898b780adb4b851052e9a1b65e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1241896306035610124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21,7 +102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e8ff9c91590433438f340f1b81f2bdc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.97
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e8ff9c91590433438f340f1b81f2bdc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -51,9 +132,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8538683008064274144, guid: 9e8ff9c91590433438f340f1b81f2bdc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7435075978315510912, guid: 9e8ff9c91590433438f340f1b81f2bdc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9e8ff9c91590433438f340f1b81f2bdc, type: 3}
       propertyPath: m_Name
-      value: roblox
+      value: roblox Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2674862264825542161, guid: 9e8ff9c91590433438f340f1b81f2bdc, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -67,6 +156,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0270427b72bcfb442a3968098667fe75, type: 2}
+    - target: {fileID: 4286291830676624077, guid: 9e8ff9c91590433438f340f1b81f2bdc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822041229375791454, guid: 9e8ff9c91590433438f340f1b81f2bdc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5895470602029535338, guid: 9e8ff9c91590433438f340f1b81f2bdc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -77,3 +174,8 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: b354aeb2c9c0d2d4ea83aab950959b07, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e8ff9c91590433438f340f1b81f2bdc, type: 3}
+--- !u!1 &2161010723416862557 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9e8ff9c91590433438f340f1b81f2bdc, type: 3}
+  m_PrefabInstance: {fileID: 1241896306035610124}
+  m_PrefabAsset: {fileID: 0}
