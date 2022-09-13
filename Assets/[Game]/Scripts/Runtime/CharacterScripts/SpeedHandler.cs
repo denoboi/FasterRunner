@@ -39,6 +39,6 @@ public class SpeedHandler : MonoBehaviour
         if (Slider == null)
             return;
 
-        Slider.value = PlayerController.RunnerSpeed();
+        //Slider.value = PlayerController.RunnerSpeed();
     }
 }

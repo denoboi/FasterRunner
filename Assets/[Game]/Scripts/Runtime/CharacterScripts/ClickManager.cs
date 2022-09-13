@@ -1,9 +1,11 @@
 
 using System;
 using HCB.Core;
+using HCB.IncrimantalIdleSystem;
 using UnityEngine;
 
-public class ClickManager : MonoBehaviour
+
+public class ClickManager : IdleStatObjectBase
 {
    public static ClickManager Instance;
    private float _clickCount;
@@ -31,7 +33,12 @@ public class ClickManager : MonoBehaviour
       EventManager.OnCountDownEnded.RemoveListener(OnCountDownEnded);
    }
 
-   
+   public override void UpdateStat(string id)
+   {
+      throw new NotImplementedException();
+   }
+
+
    private void Update()
    {
       UpgradeSpeed();
@@ -39,7 +46,7 @@ public class ClickManager : MonoBehaviour
 
    void OnCountDownEnded()
    {
-      _isSpeedUpgrading = false;
+      _isSpeedUpgrading = false; //countdown bittiginde speed upgrade duracak.
    }
 
 

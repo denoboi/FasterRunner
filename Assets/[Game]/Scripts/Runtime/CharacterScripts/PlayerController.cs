@@ -9,12 +9,25 @@ public class PlayerController : MonoBehaviour
 {
     private Runner _runner;
     public Runner Runner => _runner == null ? _runner = GetComponent<Runner>() : _runner;
-    
 
-    private float _speedMultiplier = 100f;
-    private float _speedDenominator = 10f;
+
+    private float _speedMultiplier;
+    private float _speedDenominator;
 
     public bool IsControlable { get; set; }
+
+    public float SpeedMultiplier
+    {
+        get => _speedMultiplier = ClickManager.Instance.Speed;
+        set { _speedMultiplier = value; }
+    }
+
+    public float SpeedDenominator
+    {
+        get => _speedDenominator = ClickManager.Instance.Speed;
+
+        set { _speedDenominator = value; }
+    }
 
 
     private void OnEnable()
@@ -27,14 +40,14 @@ public class PlayerController : MonoBehaviour
     {
         if (Managers.Instance == null)
             return;
-        
+
         LevelManager.Instance.OnLevelStart.RemoveListener(OnLevelStart);
         EventManager.OnCountDownEnded.RemoveListener(OnCountDownEnded);
     }
 
     private void OnLevelStart()
     {
-        IsControlable = false; //baslangicta hareket etmemeliyim.
+        IsControlable = false; //when first countdown player shouldn't move
     }
 
     private void OnCountDownEnded()
@@ -42,27 +55,12 @@ public class PlayerController : MonoBehaviour
         IsControlable = true;
     }
 
-    public float SpeedMultiplier
-    {
-        get => _speedMultiplier;
-        private set { _speedMultiplier = value; }
-    }
-
-    public float SpeedDenominator
-    {
-        get { return _speedDenominator; }
-
-        set { _speedDenominator = value; }
-    }
 
     private void Update()
     {
-        
         SpeedIncrease();
         SpeedDecrease();
     }
-
-   
 
 
     private void SpeedIncrease()
@@ -74,29 +72,23 @@ public class PlayerController : MonoBehaviour
         if (!GameManager.Instance.IsGameStarted) return;
         if (Input.GetMouseButtonDown(0))
         {
-            Runner.followSpeed += SpeedMultiplier * Time.deltaTime;
+            Runner.followSpeed += SpeedMultiplier * Time.deltaTime * 100;
             Debug.Log(Runner.followSpeed);
+            Debug.Log(SpeedMultiplier);
         }
-       
     }
 
-    
 
     private void SpeedDecrease()
     {
-        Runner.followSpeed -= SpeedDenominator * Time.deltaTime;
+        Runner.followSpeed -= SpeedDenominator * Time.deltaTime * 10;
         if (Runner.followSpeed <= 0)
             Runner.followSpeed = 0;
     }
 
-    public float RunnerSpeed()
-    {
-        float speed = Runner.followSpeed;
-        return speed;
-    }
-
-    public void Ezgi()
-    {
-        Debug.Log("InayiEzgi");
-    }
+    // public float RunnerSpeed()
+    // {
+    //     float speed = Runner.followSpeed;
+    //     return speed;
+    // }
 }

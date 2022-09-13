@@ -49,12 +49,13 @@ public class CountdownTimer : MonoBehaviour
             IsCountDowning = true;
         }
 
-        IsCountDowning = false;
+        EventManager.OnCountDownEnded.Invoke();
+        IsCountDowning = false; // for playercontroller script, in order to allow moving after countdown
         TMPro.text = "Run!";
         yield return new WaitForSeconds(1);
         TMPro.gameObject.SetActive(false);
 
-        EventManager.OnCountDownEnded.Invoke();
+        
     }
     
 }
