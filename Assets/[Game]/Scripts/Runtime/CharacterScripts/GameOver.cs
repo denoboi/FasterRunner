@@ -8,7 +8,11 @@ using UnityEngine;
 public class GameOver : MonoBehaviour
 {
     private PlayerController _playerController;
-    
+    private CharacterAnimation _characterAnimation;
+
+    public CharacterAnimation CharacterAnimation => _characterAnimation == null
+        ? _characterAnimation = GetComponentInChildren<CharacterAnimation>()
+        : _characterAnimation;
     public PlayerController PlayerController
     {
         get
@@ -28,14 +32,17 @@ public class GameOver : MonoBehaviour
 
     private void Over()
     {
-        PlayerController.Runner.follow = false; //yavasca duracak.
-        GameManager.Instance.CompeleteStage(true);
-        //Particle
-        //Animation
+        StartCoroutine(OverCo());
     }
 
-    // IEnumerator OverCo()
-    // {
-    //     PlayerController.Runner.followSpeed 
-    // }
+    IEnumerator OverCo()
+    {
+        yield return new WaitForSeconds(1);
+        CharacterAnimation.TriggerAnimation("RunningToTurn");
+        CharacterAnimation.TriggerAnimation("SambaDance");
+        yield return new WaitForSeconds(1);
+        GameManager.Instance.CompeleteStage(true);
+       
+           
+    }
 }

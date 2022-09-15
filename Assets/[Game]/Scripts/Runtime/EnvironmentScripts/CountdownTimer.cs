@@ -9,8 +9,10 @@ public class CountdownTimer : MonoBehaviour
 {
     public static CountdownTimer Instance;
     
-    public int CountdownTime;
+    public float CountdownTime { get; private set; }
     public TextMeshProUGUI TMPro;
+    
+    private const float MAX_CLICKCOUNTDOWN = 3;
 
     public bool IsCountDowning { get; set; }
     private void Awake()
@@ -32,6 +34,7 @@ public class CountdownTimer : MonoBehaviour
 
     void StartCountDown()
     {
+        CountdownTime = MAX_CLICKCOUNTDOWN;
         StartCoroutine(CountDownCo());
     }
 
@@ -40,6 +43,7 @@ public class CountdownTimer : MonoBehaviour
     {
         while (CountdownTime > 0)
         {
+            TMPro.gameObject.SetActive(true);
             TMPro.text = CountdownTime.ToString();
 
             yield return new WaitForSeconds(1);

@@ -32,10 +32,7 @@ public class ClickManager : IdleStatObjectBase
          return;
       EventManager.OnFirstCountDownEnded.RemoveListener(OnCountDownEnded);
    }
-
-  
-
-
+   
    private void Update()
    {
       UpgradeSpeed();

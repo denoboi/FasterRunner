@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
     {
         SpeedIncrease();
         SpeedDecrease();
+        SpeedDecreaseForGameOver();
     }
 
 
@@ -82,6 +83,16 @@ public class PlayerController : MonoBehaviour
     private void SpeedDecrease()
     {
         Runner.followSpeed -= SpeedDenominator * Time.deltaTime / 10;
+        if (Runner.followSpeed <= 0)
+            Runner.followSpeed = 0;
+    }
+
+    public void SpeedDecreaseForGameOver()
+    {
+        //IsOver alabilmek icin ikinci countdown instance yapildi!
+        if (!SecondCountdown.Instance.IsOver) 
+            return;
+        Runner.followSpeed -= SpeedDenominator * Time.deltaTime;
         if (Runner.followSpeed <= 0)
             Runner.followSpeed = 0;
     }

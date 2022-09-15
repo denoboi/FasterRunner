@@ -24,4 +24,9 @@ public class CharacterAnimation : MonoBehaviour
     {
        SetSpeed("Speed", PlayerAnimationSpeed.CurrentSpeed);
     }
+
+    public void TriggerAnimation(string animname)
+    {
+        Animator.SetTrigger(animname);
+    }
 }

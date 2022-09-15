@@ -6,11 +6,20 @@ using UnityEngine;
 
 public class SecondCountdown : MonoBehaviour
 {
+    public static SecondCountdown Instance;
+
     public float CountDownTime { get; private set; }
 
     private const float MAX_COUNTDOWN = 20;
 
     public TextMeshProUGUI CdownText;
+    
+    public bool IsOver { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void OnEnable()
     {
@@ -25,6 +34,7 @@ public class SecondCountdown : MonoBehaviour
 
     void StartCountdown()
     {
+        //UI bir kez yuklendigi icin.
         CountDownTime = MAX_COUNTDOWN; //Ui bir kez yuklendigi icin. 
         StartCoroutine(CountdownTimerCo());
     }
@@ -33,13 +43,15 @@ public class SecondCountdown : MonoBehaviour
     {
         while (CountDownTime > 0)
         {
+            IsOver = false;
+            CdownText.gameObject.SetActive(true);
             CdownText.text = CountDownTime.ToString();
             yield return new WaitForSeconds(1);
             CountDownTime--;
             
         }
 
-        
+        IsOver = true;
         CdownText.gameObject.SetActive(false);
         EventManager.OnSecondCountDownEnded.Invoke();
     }
