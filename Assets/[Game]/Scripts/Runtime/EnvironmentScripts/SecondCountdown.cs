@@ -6,7 +6,9 @@ using UnityEngine;
 
 public class SecondCountdown : MonoBehaviour
 {
-    public float CountDownTime;
+    public float CountDownTime { get; private set; }
+
+    private const float MAX_COUNTDOWN = 20;
 
     public TextMeshProUGUI CdownText;
 
@@ -23,6 +25,7 @@ public class SecondCountdown : MonoBehaviour
 
     void StartCountdown()
     {
+        CountDownTime = MAX_COUNTDOWN; //Ui bir kez yuklendigi icin. 
         StartCoroutine(CountdownTimerCo());
     }
 
