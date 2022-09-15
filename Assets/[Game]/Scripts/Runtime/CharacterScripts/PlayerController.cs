@@ -3,14 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using Dreamteck.Forever;
 using HCB.Core;
+using HCB.Utilities;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private Runner _runner;
     public Runner Runner => _runner == null ? _runner = GetComponent<Runner>() : _runner;
 
-
+ 
+    public int _directionValue;
+   
     private float _speedMultiplier;
     private float _speedDenominator;
 
@@ -19,7 +29,6 @@ public class PlayerController : MonoBehaviour
     public float SpeedMultiplier
     {
         get => _speedMultiplier = ClickManager.Instance.Speed;
-       
     }
 
     public float SpeedDenominator
@@ -56,7 +65,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void Update()
+    private void FixedUpdate()
     {
         SpeedIncrease();
         SpeedDecrease();
@@ -73,33 +82,36 @@ public class PlayerController : MonoBehaviour
         if (!GameManager.Instance.IsGameStarted) return;
         if (Input.GetMouseButtonDown(0))
         {
-            Runner.followSpeed += SpeedMultiplier * Time.deltaTime * 2;
+            Runner.followSpeed += SpeedMultiplier * Time.fixedDeltaTime * 2;
             Debug.Log(Runner.followSpeed);
-            Debug.Log(SpeedMultiplier);
+            Debug.Log("Multiplier: " + SpeedMultiplier);
+            _directionValue = 1;
         }
     }
 
 
     private void SpeedDecrease()
     {
-        Runner.followSpeed -= SpeedDenominator * Time.deltaTime / 10;
+        if (Input.GetMouseButtonUp(0))
+        {
+            _directionValue = -1;
+            
+        }
+        
+        Runner.followSpeed -= SpeedDenominator * Time.fixedDeltaTime / 8;
         if (Runner.followSpeed <= 0)
             Runner.followSpeed = 0;
+
+       
     }
 
     public void SpeedDecreaseForGameOver()
     {
         //IsOver alabilmek icin ikinci countdown instance yapildi!
-        if (!SecondCountdown.Instance.IsOver) 
+        if (!SecondCountdown.Instance.IsOver)
             return;
         Runner.followSpeed -= SpeedDenominator * Time.deltaTime;
         if (Runner.followSpeed <= 0)
             Runner.followSpeed = 0;
     }
-
-    // public float RunnerSpeed()
-    // {
-    //     float speed = Runner.followSpeed;
-    //     return speed;
-    // }
 }

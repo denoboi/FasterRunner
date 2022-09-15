@@ -8,15 +8,11 @@ public class ClickTexts : MonoBehaviour
 {
     public TextMeshProUGUI TextMeshProUGUI;
     
-    private void OnEnable()
-    {
-        throw new NotImplementedException();
-    }
-
-    private void OnDisable()
-    {
-        EventManager.OnFirstCountDownEnded.RemoveListener(DestroyObject);
-    }
+   
+    // private void OnDisable()
+    // {
+    //     EventManager.OnFirstCountDownEnded.RemoveListener(DestroyObject);
+    // }
 
     // Update is called once per frame
     void Update()

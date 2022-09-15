@@ -8,7 +8,7 @@ public class PlayerAnimationSpeed : MonoBehaviour
 
     private Vector3 _oldPosition;
 
-    private void Update()
+    private void LateUpdate()
     {
         CalculateSpeed();
     }
