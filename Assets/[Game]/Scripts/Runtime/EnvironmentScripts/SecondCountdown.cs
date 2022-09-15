@@ -7,7 +7,7 @@ using UnityEngine;
 public class SecondCountdown : MonoBehaviour
 {
     public static SecondCountdown Instance;
-
+   
     public float CountDownTime { get; private set; }
 
     private const float MAX_COUNTDOWN = 20;
