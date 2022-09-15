@@ -22,8 +22,7 @@ public class FingerTap : MonoBehaviour
     {
         FingerPunch();
     }
-
-    // Update is called once per frame
+    
     void FingerPunch()
     {
         if (_punchTween != null) //to prevent punchtween too big 
