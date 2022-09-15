@@ -44,6 +44,7 @@ public class SecondCountdown : MonoBehaviour
         while (CountDownTime > 0)
         {
             IsOver = false;
+            float milliseconds = Mathf.FloorToInt(CountDownTime % 1000);
             CdownText.gameObject.SetActive(true);
             CdownText.text = CountDownTime.ToString();
             yield return new WaitForSeconds(1);

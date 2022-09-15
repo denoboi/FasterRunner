@@ -38,7 +38,7 @@ ModelImporter:
       name: LeftTurn
       takeName: mixamo.com
       internalID: 0
-      firstFrame: 0
+      firstFrame: 2
       lastFrame: 49
       wrapMode: 0
       orientationOffsetY: 0
