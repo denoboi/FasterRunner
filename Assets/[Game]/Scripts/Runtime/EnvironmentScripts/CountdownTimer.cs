@@ -10,7 +10,7 @@ public class CountdownTimer : MonoBehaviour
     public static CountdownTimer Instance;
     
     public float CountdownTime { get; private set; }
-    public TextMeshProUGUI TMPro;
+    public TextMeshPro TMPro;
     
     private const float MAX_CLICKCOUNTDOWN = 3;
 
