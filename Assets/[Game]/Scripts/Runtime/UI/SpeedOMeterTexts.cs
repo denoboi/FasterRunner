@@ -28,6 +28,8 @@ public class SpeedOMeterTexts : MonoBehaviour
     
     private void OnDisable()
     {
+        if (Managers.Instance == null)
+            return;
         EventManager.OnClick.RemoveListener(UpdateTexts);
         SceneController.Instance.OnSceneLoaded.RemoveListener(SetInitialText);
 

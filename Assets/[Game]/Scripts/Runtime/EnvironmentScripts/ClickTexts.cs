@@ -13,7 +13,7 @@ public class ClickTexts : MonoBehaviour
 {
     
     public TextMeshProUGUI TextMeshProUGUI;
-    private const int TEXT_COUNT = 10;
+    private const int TEXT_COUNT = 6;
 
     private string ScaleTweenId;
     private string FadeTweenId;

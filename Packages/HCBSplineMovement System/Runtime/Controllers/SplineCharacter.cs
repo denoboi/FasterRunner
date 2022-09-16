@@ -9,7 +9,7 @@ namespace HCB.SplineMovementSystem
     public enum CharacterLocationState {None, OnAir, OnGround, OnPlatform}
     public class LocationEvent : UnityEvent<CharacterLocationState> { }
 
-    [RequireComponent(typeof(SplineCharacterMovementController))]
+   
     public class SplineCharacter : MonoBehaviour
     {
         #region Properties

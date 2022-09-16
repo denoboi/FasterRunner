@@ -9,7 +9,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance;
-
+    private bool _isMouseButtonUp;
     private void Awake()
     {
         Instance = this;
@@ -70,6 +70,10 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            _isMouseButtonUp = false;
+        }
         SpeedIncrease();
         SpeedDecrease();
         SpeedDecreaseForGameOver();
@@ -83,9 +87,11 @@ public class PlayerController : MonoBehaviour
         if (CountdownTimer.Instance.IsCountDowning)
             return;
         if (!GameManager.Instance.IsGameStarted) return;
+        
         if (Input.GetMouseButtonDown(0))
         {
-            float speed = Runner.followSpeed + SpeedMultiplier * Time.deltaTime * 5;
+            
+            float speed = Runner.followSpeed + SpeedMultiplier * Time.deltaTime * 10;
             speed = Mathf.Min(speed, MaxSpeed); //speed max'i gecerse max i al
             
             Runner.followSpeed = speed;
@@ -100,10 +106,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             _directionValue = -1;
-            
+            _isMouseButtonUp = true;
         }
-        
-        Runner.followSpeed -= SpeedDenominator * Time.deltaTime / 8;
+
+        if (!_isMouseButtonUp)
+            return;
+        Runner.followSpeed -= SpeedDenominator * Time.deltaTime * 1f;
         if (Runner.followSpeed <= 0)
             Runner.followSpeed = 0;
 

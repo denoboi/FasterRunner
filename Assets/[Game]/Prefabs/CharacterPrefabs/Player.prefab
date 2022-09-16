@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3188283857372570826}
   - component: {fileID: 3188283857372570825}
   - component: {fileID: 3188283858266094258}
+  - component: {fileID: 8596952067127987254}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -118,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5d1296cfebdde439fb48dc4d1df066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _directionValue: 0
 --- !u!114 &3188283857372570825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +144,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21e08a0c9755074419063e17e0a93882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8596952067127987254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3188283857372570822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d04e8992a604b144a951206cb53ef61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnSlideStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSlideStop:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3188283858301173342
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,6 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3188283858301173343}
+  - component: {fileID: 150285804290681331}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -173,6 +194,31 @@ Transform:
   m_Father: {fileID: 3188283857372570823}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &150285804290681331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3188283858301173342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8dee5c4367f97a46a95531d29e14dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clampData: {fileID: 11400000, guid: eb6d777d46d3f9843b1fa281f925c80d, type: 2}
+  EnableBodyRotation: 1
+  RotateBody: {fileID: 3188283858585097038}
+  Use:
+    Filter: 0
+    IgnoreStartedOverGui: 0
+    RequiredFingerCount: 0
+    RequiredMouseButtons: 0
+    RequiredSelectable: {fileID: 0}
+  Camera: {fileID: 0}
+  Dampening: -1
+  Inertia: 0
+  remainingTranslation: {x: 0, y: 0, z: 0}
 --- !u!1 &3188283858585097037
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,13 +17,26 @@ public class SpeedOMeter : MonoBehaviour
     public const float MAX_ANGLE = 180f;
     public const float MIN_ANGLE = 0f; //eulerangles'lar eksi dereceye dusemiyor.
 
+    private void OnEnable()
+    {
+        SceneController.Instance.OnSceneLoaded.AddListener(ResetIndicator);
+    }
+
+    private void OnDisable()
+    {
+        if (Managers.Instance == null)
+            return;
+        SceneController.Instance.OnSceneLoaded.RemoveListener(ResetIndicator);
+    }
+
+
     private void Start()
     {
         _rectTransform = Indicator.GetComponent<RectTransform>();
     }
 
 
-    private void FixedUpdate()
+    private void Update()
     {
         UpdateSliderValue();
     }
@@ -35,10 +48,8 @@ public class SpeedOMeter : MonoBehaviour
             return;
         if (Indicator == null || PlayerController.Instance.Runner == null)
             return;
-        if (PlayerController.Instance.Runner.followSpeed == 0 || PlayerController.Instance.SpeedMultiplier == 0)
-            return;
-
-
+       
+        
         float eulerAngleZ = HCBUtilities.Remap(PlayerController.Instance.Runner.followSpeed, 0,
             PlayerController.Instance.MaxSpeed, MIN_ANGLE, MAX_ANGLE); //hiz 0'ken minangle'a 
 
@@ -58,5 +69,10 @@ public class SpeedOMeter : MonoBehaviour
         if (offset > 0)
             current = Mathf.MoveTowardsAngle(current, midAngle, offset);
         return current;
+    }
+
+    private void ResetIndicator()
+    {
+        Indicator.transform.localEulerAngles = Vector3.zero;
     }
 }
