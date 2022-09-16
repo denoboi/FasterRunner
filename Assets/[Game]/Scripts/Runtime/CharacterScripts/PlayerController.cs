@@ -20,7 +20,9 @@ public class PlayerController : MonoBehaviour
 
  
     public int _directionValue;
-   
+
+    public float MaxSpeed { get; private set; }
+    
     private float _speedMultiplier;
     private float _speedDenominator;
 
@@ -62,6 +64,7 @@ public class PlayerController : MonoBehaviour
     private void OnCountDownEnded()
     {
         IsControlable = true;
+        MaxSpeed = SpeedMultiplier * SpeedOMeterTexts.Instance.Multipliers[SpeedOMeterTexts.Instance.Multipliers.Count - 1];
     }
 
 
@@ -82,8 +85,11 @@ public class PlayerController : MonoBehaviour
         if (!GameManager.Instance.IsGameStarted) return;
         if (Input.GetMouseButtonDown(0))
         {
-            Runner.followSpeed += SpeedMultiplier * Time.fixedDeltaTime * 2;
-            Debug.Log(Runner.followSpeed);
+            float speed = Runner.followSpeed + SpeedMultiplier * Time.fixedDeltaTime * 2;
+            speed = Mathf.Min(speed, MaxSpeed);
+            
+            Runner.followSpeed = speed;
+            Debug.Log("FollowSpeed: " + Runner.followSpeed);
             Debug.Log("Multiplier: " + SpeedMultiplier);
             _directionValue = 1;
         }

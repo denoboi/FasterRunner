@@ -261,10 +261,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c623274580f39f948ab0f5c9019cff7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _generateSegmentsAhead: 30
-  _activateSegmentsAhead: 3
+  _generateSegmentsAhead: 20
+  _activateSegmentsAhead: 2
   _loadTimeout: 1
-  _maxSegments: 1000
+  _maxSegments: 250
   _buildOnAwake: 1
   _multithreaded: 1
   _useUnloadUnusedAssets: 0
@@ -706,7 +706,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3151737526185761104, guid: 9d064c260f4a2e6478f2f35671f0f41c, type: 3}
       propertyPath: m_Name
-      value: Gate
+      value: CountDownGate
       objectReference: {fileID: 0}
     - target: {fileID: 3151737526185761104, guid: 9d064c260f4a2e6478f2f35671f0f41c, type: 3}
       propertyPath: m_IsActive
@@ -1002,7 +1002,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677471380}
-  m_LocalRotation: {x: 0.28993762, y: -0.000000012645049, z: 0.000000003830826, w: 0.95704556}
+  m_LocalRotation: {x: 0.2899376, y: 0.000000018554507, z: -0.0000000056211, w: 0.95704556}
   m_LocalPosition: {x: 0, y: 9.6, z: -14.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1151,6 +1151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5d1296cfebdde439fb48dc4d1df066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _directionValue: 0
 --- !u!114 &1678356234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1562,6 +1563,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3188283857372570828, guid: 5ba0ec4f878b37345857b7442d37d5a9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3188283858585097038, guid: 5ba0ec4f878b37345857b7442d37d5a9, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -1621,15 +1626,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5841760635998385103, guid: ea46818347d5a954dae9961068946325, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.28993762
+      value: 0.2899376
       objectReference: {fileID: 0}
     - target: {fileID: 5841760635998385103, guid: ea46818347d5a954dae9961068946325, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000012645049
+      value: 0.000000018554507
       objectReference: {fileID: 0}
     - target: {fileID: 5841760635998385103, guid: ea46818347d5a954dae9961068946325, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000003830826
+      value: -0.0000000056211
       objectReference: {fileID: 0}
     - target: {fileID: 5841760635998385103, guid: ea46818347d5a954dae9961068946325, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

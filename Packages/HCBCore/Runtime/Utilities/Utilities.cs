@@ -112,7 +112,16 @@ namespace HCB.Utilities
             else result = Score.ToString("F2") + ScoreNames[i];
             return result;
         }
+        
+        public static float Remap(float from, float fromMin, float fromMax, float toMin, float toMax)
+        {
+            float percentage = Mathf.InverseLerp(fromMin, fromMax, from);
+            float value = Mathf.Lerp(toMin, toMax, percentage);
+            return value;
+        }
     }
+    
+    
 
 
     public static class IListExtensions
