@@ -23,6 +23,7 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using Sirenix.OdinInspector;
 
 namespace ntw.CurvedTextMeshPro
 {
@@ -37,14 +38,14 @@ namespace ntw.CurvedTextMeshPro
         /// </summary>
         [SerializeField]
         [Tooltip("The radius of the text circle arc")]
-        private float m_radius = 10.0f;
+        private float m_radius = 35f;
 
         /// <summary>
         /// How much degrees the text arc should span
         /// </summary>
         [SerializeField]
         [Tooltip("How much degrees the text arc should span")]
-        private float m_arcDegrees = 90.0f;
+        private float m_arcDegrees = 366f;
 
         /// <summary>
         /// The angular offset at which the arc should be centered, in degrees.
@@ -52,7 +53,7 @@ namespace ntw.CurvedTextMeshPro
         /// </summary>
         [SerializeField]
         [Tooltip("The angular offset at which the arc should be centered, in degrees")]
-        private float m_angularOffset = -90;
+        private float m_angularOffset = -85;
 
         /// <summary>
         /// How many maximum degrees per letters should be. For instance, if you specify
@@ -62,7 +63,7 @@ namespace ntw.CurvedTextMeshPro
         /// </summary>
         [SerializeField]
         [Tooltip("The maximum angular distance between letters, in degrees")]
-        private int m_maxDegreesPerLetter = 360;
+        private int m_maxDegreesPerLetter = 339;
 
         /// <summary>
         /// Previous value of <see cref="m_radius"/>
@@ -83,12 +84,15 @@ namespace ntw.CurvedTextMeshPro
         /// Previous value of <see cref="m_maxDegreesPerLetter"/>
         /// </summary>
         private float m_oldMaxDegreesPerLetter = float.MaxValue;
-
+        
+        
+       
         /// <summary>
         /// Method executed at every frame that checks if some parameters have been changed
         /// </summary>
         /// <returns></returns>
-        protected override bool ParametersHaveChanged()
+      
+        public override bool ParametersHaveChanged()
         {
             //check if paramters have changed and update the old values for next frame iteration
             bool retVal = m_radius != m_oldRadius || m_arcDegrees != m_oldArcDegrees || m_angularOffset != m_oldAngularOffset || m_oldMaxDegreesPerLetter != m_maxDegreesPerLetter;
@@ -110,6 +114,8 @@ namespace ntw.CurvedTextMeshPro
         /// <param name="textInfo">Information on the text that we are showing</param>
         /// <param name="charIdx">Index of the character we have to compute the transformation for</param>
         /// <returns>Transformation matrix to be applied to all vertices of the text</returns>
+        ///
+       
         protected override Matrix4x4 ComputeTransformationMatrix(Vector3 charMidBaselinePos, float zeroToOnePos, TMP_TextInfo textInfo, int charIdx)      
         {
             //calculate the actual degrees of the arc considering the maximum distance between letters

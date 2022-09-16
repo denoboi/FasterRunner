@@ -37,7 +37,7 @@ public class GameOver : MonoBehaviour
 
     IEnumerator OverCo()
     {
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(.3f);
         CharacterAnimation.TriggerAnimation("RunningToTurn");
         CharacterAnimation.TriggerAnimation("SambaDance");
         

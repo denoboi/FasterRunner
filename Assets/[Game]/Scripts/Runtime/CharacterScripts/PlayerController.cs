@@ -64,11 +64,11 @@ public class PlayerController : MonoBehaviour
     private void OnCountDownEnded()
     {
         IsControlable = true;
-        MaxSpeed = SpeedMultiplier * SpeedOMeterTexts.Instance.Multipliers[SpeedOMeterTexts.Instance.Multipliers.Count - 1];
+        MaxSpeed = SpeedMultiplier * (SpeedOMeterTexts.Instance.TextMeshProUGUIS.Count - 1);
     }
 
 
-    private void FixedUpdate()
+    private void Update()
     {
         SpeedIncrease();
         SpeedDecrease();
@@ -85,12 +85,11 @@ public class PlayerController : MonoBehaviour
         if (!GameManager.Instance.IsGameStarted) return;
         if (Input.GetMouseButtonDown(0))
         {
-            float speed = Runner.followSpeed + SpeedMultiplier * Time.fixedDeltaTime * 2;
-            speed = Mathf.Min(speed, MaxSpeed);
+            float speed = Runner.followSpeed + SpeedMultiplier * Time.deltaTime * 5;
+            speed = Mathf.Min(speed, MaxSpeed); //speed max'i gecerse max i al
             
             Runner.followSpeed = speed;
-            Debug.Log("FollowSpeed: " + Runner.followSpeed);
-            Debug.Log("Multiplier: " + SpeedMultiplier);
+           
             _directionValue = 1;
         }
     }
@@ -104,7 +103,7 @@ public class PlayerController : MonoBehaviour
             
         }
         
-        Runner.followSpeed -= SpeedDenominator * Time.fixedDeltaTime / 8;
+        Runner.followSpeed -= SpeedDenominator * Time.deltaTime / 8;
         if (Runner.followSpeed <= 0)
             Runner.followSpeed = 0;
 
@@ -116,7 +115,7 @@ public class PlayerController : MonoBehaviour
         //IsOver alabilmek icin ikinci countdown instance yapildi!
         if (!SecondCountdown.Instance.IsOver)
             return;
-        Runner.followSpeed -= SpeedDenominator * Time.deltaTime;
+        Runner.followSpeed -= SpeedDenominator * Time.deltaTime * 50;
         if (Runner.followSpeed <= 0)
             Runner.followSpeed = 0;
     }

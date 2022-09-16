@@ -5,14 +5,14 @@ using HCB.IncrimantalIdleSystem;
 using UnityEngine;
 
 
-public class ClickManager : IdleStatObjectBase
+public class ClickManager : MonoBehaviour
 {
    public static ClickManager Instance;
-   private float _clickCount;
-   private float _speed = 1;
+   
+  
 
    public float Speed { get; set; }
-   public float SpeedIncrease { get; set; }
+ 
 
    private bool _isSpeedUpgrading = true;
  
@@ -50,15 +50,12 @@ public class ClickManager : IdleStatObjectBase
          return;
       if (Input.GetMouseButtonDown(0))
       {
-         Speed += (float)IdleStat.CurrentValue;
+         Speed += (float)ClickUpgrade.Instance.IdleStat.CurrentValue;
          EventManager.OnClick.Invoke(); //To update texts.
       }
    }
    
-   public override void UpdateStat(string id)
-   {
-      throw new NotImplementedException();
-   }
+  
 
   
    

@@ -5,6 +5,7 @@ using Dreamteck.Forever;
 using HCB.Core;
 using UnityEngine;
 using UnityEngine.UI;
+using HCB.Utilities;
 
 public class SpeedOMeter : MonoBehaviour
 {
@@ -13,9 +14,9 @@ public class SpeedOMeter : MonoBehaviour
     private RectTransform _rectTransform;
     public float Result;
 
-    public const float MAX_ANGLE = 95f;
-    public const float MIN_ANGLE = -93f;
-    
+    public const float MAX_ANGLE = 180f;
+    public const float MIN_ANGLE = 0f; //eulerangles'lar eksi dereceye dusemiyor.
+
     private void Start()
     {
         _rectTransform = Indicator.GetComponent<RectTransform>();
@@ -36,22 +37,15 @@ public class SpeedOMeter : MonoBehaviour
             return;
         if (PlayerController.Instance.Runner.followSpeed == 0 || PlayerController.Instance.SpeedMultiplier == 0)
             return;
-        
-        Result = PlayerController.Instance.Runner.followSpeed / PlayerController.Instance.SpeedMultiplier;
-        Result = Mathf.Clamp01(Result);
 
-        var localEulerAngles = Indicator.transform.localEulerAngles;
-        Vector3 rotateValueZ = new Vector3(localEulerAngles.x, localEulerAngles.y, 95f);
-        
-        Vector3 rotateValueDefault = new Vector3(localEulerAngles.x, localEulerAngles.y, -93);
 
-        localEulerAngles = Vector3.Lerp(rotateValueDefault, rotateValueZ, (Result * 10f) * Time.deltaTime);
-        
-        Indicator.transform.localEulerAngles = localEulerAngles;
+        float eulerAngleZ = HCBUtilities.Remap(PlayerController.Instance.Runner.followSpeed, 0,
+            PlayerController.Instance.MaxSpeed, MIN_ANGLE, MAX_ANGLE); //hiz 0'ken minangle'a 
 
-        Indicator.transform.eulerAngles = new Vector3(Indicator.transform.eulerAngles.x, Indicator.transform.eulerAngles.y, ClampAngle(Indicator.transform.eulerAngles.z, -93f, 95f));
+        float lerpEulerAngleZ = Mathf.Lerp(Indicator.transform.localEulerAngles.z, eulerAngleZ, Time.deltaTime);
 
-        //Slider.value = PlayerController.RunnerSpeed();
+        Indicator.transform.localEulerAngles = new Vector3(Indicator.transform.localEulerAngles.x,
+            Indicator.transform.localEulerAngles.y, lerpEulerAngleZ);
     }
 
     public static float ClampAngle(float current, float min, float max)
