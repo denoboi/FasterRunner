@@ -328,11 +328,11 @@ MonoBehaviour:
     colliders: []
     _isRoot: 0
   bounds:
-    center: {x: 0, y: 3.5713353, z: 0.13985062}
-    extents: {x: 5, y: 8.571339, z: 100.169846}
-    max: {x: 5, y: 12.142674, z: 100.3097}
+    center: {x: 0, y: 3.5713353, z: 0.29611588}
+    extents: {x: 5, y: 8.571339, z: 100.32611}
+    max: {x: 5, y: 12.142674, z: 100.62223}
     min: {x: -5, y: -5.000004, z: -100.03}
-    size: {x: 10, y: 17.142677, z: 200.33969}
+    size: {x: 10, y: 17.142677, z: 200.65222}
   builders: []
   unpacked: 0
   alwaysDraw: 0
@@ -373,18 +373,6 @@ Transform:
   m_Father: {fileID: 543450652883133209}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5664733529558790192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3947554655684509931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01fb12eadb28a9d459d539b7cc5df731, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5484792668086148856
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,11 +508,6 @@ MeshFilter:
 --- !u!65 &5547634031535383194 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 4024471158785559008, guid: 8b19e350f64099543986bf55b9b93b07, type: 3}
-  m_PrefabInstance: {fileID: 8873477681727875962}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3947554655684509931 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5614973865735023505, guid: 8b19e350f64099543986bf55b9b93b07, type: 3}
   m_PrefabInstance: {fileID: 8873477681727875962}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &9108920001300836205 stripped
