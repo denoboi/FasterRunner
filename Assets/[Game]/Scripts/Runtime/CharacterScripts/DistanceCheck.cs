@@ -15,7 +15,7 @@ public class DistanceCheck : MonoBehaviour
    
     public float CurrentDistance { get; private set; }
     
-    public const float TOTAL_DISTANCE = 3000f;
+    public const float TOTAL_DISTANCE = 5600f;
     private Vector3 _defaultPos;
 
     
