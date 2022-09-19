@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             
-            float speed = Runner.followSpeed + SpeedMultiplier * Time.deltaTime * 10;
+            float speed = Runner.followSpeed + SpeedMultiplier * Time.deltaTime * 2;
             speed = Mathf.Min(speed, MaxSpeed); //speed max'i gecerse max i al
             
             Runner.followSpeed = speed;
