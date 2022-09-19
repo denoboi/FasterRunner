@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private float _lastMouseUpTime;
     private const float SPEEDDOWN_THRESHOLD = 1.5f;
 
-    private float _speedIncreaseMultiplier = 4;
+    private float _speedIncreaseMultiplier = 3;
     public float SpeedIncreaseMultiplier { get; set; }
     private void Awake()
     {
@@ -120,7 +120,7 @@ public class PlayerController : MonoBehaviour
         if (!_isMouseButtonUp)
             return;
 
-        float decreaseMultiplier = Time.time > _lastMouseUpTime + SPEEDDOWN_THRESHOLD ? 2f : 0.2f;
+        float decreaseMultiplier = Time.time > _lastMouseUpTime + SPEEDDOWN_THRESHOLD ? 2f : 0.08f;
         Runner.followSpeed -= SpeedDenominator * Time.deltaTime * decreaseMultiplier;
         if (Runner.followSpeed <= 0)
             Runner.followSpeed = 0;

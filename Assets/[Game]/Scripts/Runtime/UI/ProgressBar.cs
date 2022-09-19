@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class ProgressBar : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private List<Transform> startPoints = new List<Transform>();
 
-    // Update is called once per frame
-    void Update()
+
+    void CalculateProgress()
     {
         
     }
+    
 }
