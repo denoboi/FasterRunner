@@ -23,7 +23,7 @@ MonoBehaviour:
       segments:
       - nested: 0
         randomPickChance: 1
-        _prefab: {fileID: 919132148898593187, guid: 7c9bfdeddd56afe4b8e59c968c92277c, type: 3}
+        _prefab: {fileID: 4866559871718858895, guid: 841053c5c9bb98347a497e12b22deb4f, type: 3}
         _segmentPool: []
         _pool: 0
         _poolParent: {fileID: 0}
@@ -63,6 +63,23 @@ MonoBehaviour:
         _poolParent: {fileID: 0}
       customPathGenerator: {fileID: 11400000, guid: b2aaae5f06f86504d8284a5012e5dd54, type: 2}
       spawnCount: 3
+      type: 1
+      randomizer: {fileID: 11400000, guid: fb600be43607d7e47822c78754644d57, type: 2}
+      customShuffle: {fileID: 0}
+      preventRepeat: 0
+    - enabled: 1
+      name: Sequence
+      isCustom: 0
+      customSequence: {fileID: 0}
+      segments:
+      - nested: 0
+        randomPickChance: 1
+        _prefab: {fileID: 1878788132055392424, guid: a0a141f3efb59944d87ea39c10d3261a, type: 3}
+        _segmentPool: []
+        _pool: 0
+        _poolParent: {fileID: 0}
+      customPathGenerator: {fileID: 11400000, guid: b2aaae5f06f86504d8284a5012e5dd54, type: 2}
+      spawnCount: 2
       type: 1
       randomizer: {fileID: 11400000, guid: fb600be43607d7e47822c78754644d57, type: 2}
       customShuffle: {fileID: 0}
@@ -93,6 +110,8 @@ MonoBehaviour:
       segmentIndex: -1
     - parent: -1
       segmentIndex: -1
+    - parent: -1
+      segmentIndex: -1
     allSequences:
     - enabled: 1
       name: Sequence
@@ -101,7 +120,7 @@ MonoBehaviour:
       segments:
       - nested: 0
         randomPickChance: 1
-        _prefab: {fileID: 919132148898593187, guid: 7c9bfdeddd56afe4b8e59c968c92277c, type: 3}
+        _prefab: {fileID: 4866559871718858895, guid: 841053c5c9bb98347a497e12b22deb4f, type: 3}
         _segmentPool: []
         _pool: 0
         _poolParent: {fileID: 0}
@@ -141,6 +160,23 @@ MonoBehaviour:
         _poolParent: {fileID: 0}
       customPathGenerator: {fileID: 11400000, guid: b2aaae5f06f86504d8284a5012e5dd54, type: 2}
       spawnCount: 3
+      type: 1
+      randomizer: {fileID: 11400000, guid: fb600be43607d7e47822c78754644d57, type: 2}
+      customShuffle: {fileID: 0}
+      preventRepeat: 0
+    - enabled: 1
+      name: Sequence
+      isCustom: 0
+      customSequence: {fileID: 0}
+      segments:
+      - nested: 0
+        randomPickChance: 1
+        _prefab: {fileID: 1878788132055392424, guid: a0a141f3efb59944d87ea39c10d3261a, type: 3}
+        _segmentPool: []
+        _pool: 0
+        _poolParent: {fileID: 0}
+      customPathGenerator: {fileID: 11400000, guid: b2aaae5f06f86504d8284a5012e5dd54, type: 2}
+      spawnCount: 2
       type: 1
       randomizer: {fileID: 11400000, guid: fb600be43607d7e47822c78754644d57, type: 2}
       customShuffle: {fileID: 0}

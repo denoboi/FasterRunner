@@ -53,7 +53,7 @@ public class SpeedOMeter : MonoBehaviour
         float eulerAngleZ = HCBUtilities.Remap(PlayerController.Instance.Runner.followSpeed, 0,
             PlayerController.Instance.MaxSpeed, MIN_ANGLE, MAX_ANGLE); //hiz 0'ken minangle'a 
 
-        float lerpEulerAngleZ = Mathf.Lerp(Indicator.transform.localEulerAngles.z, eulerAngleZ, Time.deltaTime * 15);
+        float lerpEulerAngleZ = Mathf.Lerp(Indicator.transform.localEulerAngles.z, eulerAngleZ, Time.deltaTime *5);
 
         Indicator.transform.localEulerAngles = new Vector3(Indicator.transform.localEulerAngles.x,
             Indicator.transform.localEulerAngles.y, lerpEulerAngleZ);

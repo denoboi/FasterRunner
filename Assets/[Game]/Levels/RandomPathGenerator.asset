@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathType: 3
   sampleRate: 4
-  controlPointsPerSegment: 3
+  controlPointsPerSegment: 5
   normalInterpolation:
     serializedVersion: 2
     m_Curve: []
