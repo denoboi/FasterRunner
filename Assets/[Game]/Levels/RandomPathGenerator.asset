@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fab16db9ad26e5d4589d394443875f2f, type: 3}
   m_Name: RandomPathGenerator
   m_EditorClassIdentifier: 
-  pathType: 3
-  sampleRate: 4
-  controlPointsPerSegment: 3
+  pathType: 2
+  sampleRate: 6
+  controlPointsPerSegment: 7
   normalInterpolation:
     serializedVersion: 2
     m_Curve: []

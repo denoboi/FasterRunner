@@ -16,6 +16,8 @@ public class CollectableDetector : Collector
          return;
       base.OnCollect(collectable);
       _collectables.Add(collectable);
+      
+      
 
       int collectablePointIndex = Mathf.Min(CollectablePoints.Count-1 , _collectables.Count-1);
 

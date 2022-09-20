@@ -9,7 +9,7 @@ public class GateText : MonoBehaviour
     public TextMeshPro TextMeshPro;
     private void Start()
     {
-        TextMeshPro.text = ((int)IncomeUpgrade.Instance.IdleStat.CurrentValue).ToString();
+        TextMeshPro.text = ((int)IncomeUpgrade.Instance.IdleStat.CurrentValue) + "$";
     }
     
     
