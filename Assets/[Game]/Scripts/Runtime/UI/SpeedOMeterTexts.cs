@@ -11,7 +11,7 @@ public class SpeedOMeterTexts : MonoBehaviour
 {
     public static SpeedOMeterTexts Instance;
     public List<TextMeshProUGUI> TextMeshProUGUIS = new List<TextMeshProUGUI>();
-   
+    public const float SPEED_MULTIPLIER = 0.15f;
 
 
     private void Awake()
@@ -43,7 +43,7 @@ public class SpeedOMeterTexts : MonoBehaviour
         {
           
             
-            TextMeshProUGUIS[i].text = (ClickManager.Instance.Speed * i).ToString();
+            TextMeshProUGUIS[i].text = ((int)(ClickManager.Instance.Speed * i * SPEED_MULTIPLIER)).ToString();
             
         }
     }

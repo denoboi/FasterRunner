@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
     public DistanceCheck DistanceCheck;
     public Sprite CharacterIcon;
+
     private void Awake()
     {
         Instance = this;
@@ -27,11 +28,11 @@ public class PlayerController : MonoBehaviour
     private Runner _runner;
     public Runner Runner => _runner == null ? _runner = GetComponent<Runner>() : _runner;
 
- 
+
     public int _directionValue;
 
     public float MaxSpeed { get; private set; }
-    
+
     private float _speedMultiplier;
     private float _speedDenominator;
 
@@ -48,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
         set { _speedDenominator = value; }
     }
-    
+
 
     private void OnEnable()
     {
@@ -78,16 +79,15 @@ public class PlayerController : MonoBehaviour
     private void OnCountDownEnded()
     {
         IsControlable = true;
-        MaxSpeed = SpeedMultiplier * (SpeedOMeterTexts.Instance.TextMeshProUGUIS.Count - 1);
+        MaxSpeed = SpeedMultiplier * (SpeedOMeterTexts.Instance.TextMeshProUGUIS.Count - 1) * SpeedOMeterTexts.SPEED_MULTIPLIER;
     }
 
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
-        {
             _isMouseButtonUp = false;
-        }
+
         SpeedIncrease();
         SpeedDecrease();
         SpeedDecreaseForGameOver();
@@ -101,16 +101,13 @@ public class PlayerController : MonoBehaviour
         if (CountdownTimer.Instance.IsCountDowning)
             return;
         if (!GameManager.Instance.IsGameStarted) return;
-        
+
         if (Input.GetMouseButtonDown(0))
         {
-            
             float speed = Runner.followSpeed + SpeedMultiplier * Time.deltaTime;
             speed = Mathf.Min(speed, MaxSpeed); //speed max'i gecerse max i al
-            
+
             Runner.followSpeed = speed;
-           
-            _directionValue = 1;
         }
     }
 
@@ -119,21 +116,17 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0))
         {
-            _directionValue = -1;
             _isMouseButtonUp = true;
-            _lastMouseUpTime = Time.time; 
-            
+            _lastMouseUpTime = Time.time;
         }
 
         if (!_isMouseButtonUp)
             return;
 
-        float decreaseMultiplier = Time.time > _lastMouseUpTime + SPEEDDOWN_THRESHOLD ? 2f : 0.0008f;
-        Runner.followSpeed -= SpeedDenominator * Time.deltaTime * decreaseMultiplier;
+        float decreaseMultiplier = Time.time > _lastMouseUpTime + SPEEDDOWN_THRESHOLD ? 2f : 0.1f;
+        Runner.followSpeed -= decreaseMultiplier * SpeedDenominator * Time.deltaTime;
         if (Runner.followSpeed <= 0)
             Runner.followSpeed = 0;
-
-       
     }
 
     public void SpeedDecreaseForGameOver()
@@ -141,7 +134,7 @@ public class PlayerController : MonoBehaviour
         //IsOver alabilmek icin ikinci countdown instance yapildi!
         if (!SecondCountdown.Instance.IsOver)
             return;
-        Runner.followSpeed -= SpeedDenominator * Time.deltaTime * 50;
+        Runner.followSpeed -= SpeedDenominator * Time.deltaTime * 30;
         if (Runner.followSpeed <= 0)
             Runner.followSpeed = 0;
     }
