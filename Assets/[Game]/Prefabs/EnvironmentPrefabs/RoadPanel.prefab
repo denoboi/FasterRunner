@@ -1,40 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &215238351
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 215238352}
-  m_Layer: 0
-  m_Name: StartPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &215238352
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 215238351}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8018741183863365775}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -0.000019073486, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &399486394
 GameObject:
   m_ObjectHideFlags: 0
@@ -66,14 +31,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5828237057507192933}
-  m_RootOrder: 2
+  m_Father: {fileID: 8018741183562414723}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -255.5, y: -410.22113}
-  m_SizeDelta: {x: 32.8908, y: 32.891}
-  m_Pivot: {x: -0.17436197, y: 0.50000054}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: -0.000015258789, y: 0.000017166138}
+  m_SizeDelta: {x: 32.89081, y: 32.891}
+  m_Pivot: {x: 0, y: 0.50000054}
 --- !u!222 &399486398
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -144,8 +109,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fd70a6ef05587647877c774348f211b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartPos: {fileID: 1003123549}
-  FinishPos: {fileID: 1201298706}
+  RoadLayouts:
+  - Parent: {fileID: 8018741183562414723}
+    StartPoint: {fileID: 1003123549}
+    EndPoint: {fileID: 1201298706}
+  - Parent: {fileID: 8018741184697176873}
+    StartPoint: {fileID: 7723321521010538491}
+    EndPoint: {fileID: 705242497375836269}
+  - Parent: {fileID: 8018741183893701099}
+    StartPoint: {fileID: 1671709358}
+    EndPoint: {fileID: 1975140873}
 --- !u!1 &1003123548
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +130,7 @@ GameObject:
   - component: {fileID: 1003123549}
   - component: {fileID: 1003123550}
   m_Layer: 0
-  m_Name: StartPoint
+  m_Name: StartPoint 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,7 +152,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -0.000015258789, y: 0}
+  m_AnchoredPosition: {x: -8.9, y: 0}
   m_SizeDelta: {x: 0, y: 25.538532}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1003123550
@@ -213,7 +186,7 @@ GameObject:
   - component: {fileID: 1201298706}
   - component: {fileID: 1201298707}
   m_Layer: 0
-  m_Name: EndPoint
+  m_Name: EndPoint 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -269,7 +242,7 @@ GameObject:
   - component: {fileID: 1671709358}
   - component: {fileID: 7524073982829952151}
   m_Layer: 0
-  m_Name: StartPoint
+  m_Name: StartPoint 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -292,7 +265,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: -0.000015258789, y: 0}
-  m_SizeDelta: {x: 174.7, y: 25.538532}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &7524073982829952151
 MonoBehaviour:
@@ -325,7 +298,7 @@ GameObject:
   - component: {fileID: 1975140873}
   - component: {fileID: 7829416530162071625}
   m_Layer: 0
-  m_Name: FinishPoint
+  m_Name: FinishPoint 3\
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -345,10 +318,10 @@ RectTransform:
   m_Father: {fileID: 8018741183893701099}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015258789, y: 0}
-  m_SizeDelta: {x: 116.466675, y: 25.538532}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &7829416530162071625
 MonoBehaviour:
@@ -478,7 +451,7 @@ GameObject:
   - component: {fileID: 705242497375836269}
   - component: {fileID: 2615788249686919012}
   m_Layer: 0
-  m_Name: Finish
+  m_Name: Finish 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -534,7 +507,7 @@ GameObject:
   - component: {fileID: 7723321521010538491}
   - component: {fileID: 8939311813103278419}
   m_Layer: 0
-  m_Name: StartPoint
+  m_Name: StartPoint 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -557,7 +530,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: -0.000015258789, y: 0}
-  m_SizeDelta: {x: 0, y: 25.538532}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &8939311813103278419
 MonoBehaviour:
@@ -608,7 +581,6 @@ RectTransform:
   m_Children:
   - {fileID: 8018741183773372253}
   - {fileID: 8018741185411270168}
-  - {fileID: 399486395}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -652,6 +624,7 @@ RectTransform:
   - {fileID: 4467443486060136344}
   - {fileID: 1003123549}
   - {fileID: 1201298706}
+  - {fileID: 399486395}
   m_Father: {fileID: 8018741185411270168}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -805,7 +778,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3515378862532425689}
-  - {fileID: 215238352}
   m_Father: {fileID: 8018741183562414723}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
