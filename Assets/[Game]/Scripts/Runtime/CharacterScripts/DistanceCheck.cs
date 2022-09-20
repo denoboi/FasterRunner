@@ -15,13 +15,15 @@ public class DistanceCheck : MonoBehaviour
    
     public float CurrentDistance { get; private set; }
     
-    public const float TOTAL_DISTANCE = 4200f;
+    public const float TOTAL_DISTANCE = 5600f;
     private Vector3 _defaultPos;
 
     
  
     private void Start()
     {
+        
+            
         _defaultPos = transform.position;
     }
  

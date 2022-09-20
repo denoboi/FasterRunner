@@ -391,6 +391,10 @@ PrefabInstance:
       propertyPath: objectProperties.Array.data[19]._extrusionSettings.boundsInclusion
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 278511180588227565, guid: 7c9bfdeddd56afe4b8e59c968c92277c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 100.02
+      objectReference: {fileID: 0}
     - target: {fileID: 543450652883133209, guid: 7c9bfdeddd56afe4b8e59c968c92277c, type: 3}
       propertyPath: m_RootOrder
       value: 0

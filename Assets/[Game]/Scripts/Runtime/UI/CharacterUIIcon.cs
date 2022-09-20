@@ -53,7 +53,7 @@ public class CharacterUIIcon : MonoBehaviour
     {
         float minValue = MINVAL;
         float maxValue = MAXVAL;
-        Transform parent = RoadLayouts[0].Parent;
+        
         Transform startPoint = RoadLayouts[0].StartPoint;
         Transform endPoint = RoadLayouts[0].EndPoint;
 
@@ -63,11 +63,11 @@ public class CharacterUIIcon : MonoBehaviour
             minValue = MIN_VAL2;
             maxValue = MAX_VAL2;
 
-            parent = RoadLayouts[1].Parent;
+          
             startPoint = RoadLayouts[1].StartPoint;
             endPoint = RoadLayouts[1].EndPoint;
 
-            Debug.Log("2. second: " + startPoint.position);
+       
         }
 
         else if (DistanceCheck.Instance.CurrentDistance >= MIN_VAL3 &&
@@ -76,7 +76,7 @@ public class CharacterUIIcon : MonoBehaviour
             minValue = MIN_VAL3;
             maxValue = MAX_VAL3;
 
-            parent = RoadLayouts[2].Parent;
+           
             startPoint = RoadLayouts[2].StartPoint;
             endPoint = RoadLayouts[2].EndPoint;
         }

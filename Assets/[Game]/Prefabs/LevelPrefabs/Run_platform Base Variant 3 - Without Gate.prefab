@@ -397,7 +397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132148898593187, guid: 7c9bfdeddd56afe4b8e59c968c92277c, type: 3}
       propertyPath: m_Name
-      value: Run_platform Base Variant 4 - Without Gate
+      value: Run_platform Base Variant 3 - Without Gate
       objectReference: {fileID: 0}
     - target: {fileID: 1711813855892625526, guid: 7c9bfdeddd56afe4b8e59c968c92277c, type: 3}
       propertyPath: m_Materials.Array.data[0]
