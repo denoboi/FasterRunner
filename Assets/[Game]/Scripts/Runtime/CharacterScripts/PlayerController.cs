@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
 
     private float _speedIncreaseMultiplier = 3;
     public float SpeedIncreaseMultiplier { get; set; }
+
+    public DistanceCheck DistanceCheck;
+    public Sprite CharacterIcon;
     private void Awake()
     {
         Instance = this;
@@ -45,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
         set { _speedDenominator = value; }
     }
-
+    
 
     private void OnEnable()
     {
@@ -60,6 +63,11 @@ public class PlayerController : MonoBehaviour
 
         LevelManager.Instance.OnLevelStart.RemoveListener(OnLevelStart);
         EventManager.OnFirstCountDownEnded.RemoveListener(OnCountDownEnded);
+    }
+
+    private void Start()
+    {
+        EventManager.OnCharacterSpawned.Invoke(DistanceCheck, CharacterIcon);
     }
 
     private void OnLevelStart()
