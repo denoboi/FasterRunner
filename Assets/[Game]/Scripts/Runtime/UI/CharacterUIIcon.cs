@@ -32,6 +32,8 @@ public class CharacterUIIcon : MonoBehaviour
 
     private void OnDisable()
     {
+        if (gameObject == null)
+            return;
         LevelManager.Instance.OnLevelFinish.RemoveListener(()=> Destroy(gameObject));
 
     }
