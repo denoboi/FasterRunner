@@ -36,7 +36,8 @@ public class AIController : MonoBehaviour
     {
         LevelManager.Instance.OnLevelStart.AddListener(OnLevelStart);
         EventManager.OnFirstCountDownEnded.AddListener(OnCountDownEnded);
-        //bug var hala baslangicta kosuyorlar direkt
+        GameManager.Instance.OnStageSuccess.AddListener(OnLevelStart);
+        
     }
 
     private void OnDisable()
@@ -46,20 +47,19 @@ public class AIController : MonoBehaviour
 
         LevelManager.Instance.OnLevelStart.RemoveListener(OnLevelStart);
         EventManager.OnFirstCountDownEnded.RemoveListener(OnCountDownEnded);
+        GameManager.Instance.OnStageSuccess.RemoveListener(OnLevelStart);
     }
     
     private void OnLevelStart()
     {
-        IsControlable = false; //when first countdown player shouldn't move
+        IsControlable = false;
+        Runner.follow = false; //when first countdown player shouldn't move
     }
 
     private void Update()
     {
         AIFollowSpeed();
-        
     }
-
-
 
     void OnCountDownEnded()
     {
@@ -69,6 +69,7 @@ public class AIController : MonoBehaviour
     {
         yield return new WaitForSeconds(0f);
         IsControlable = true;
+        Runner.follow = true;
         CalculateAISpeed();
         //MaxSpeed = SpeedMultiplier * (SpeedOMeterTexts.Instance.TextMeshProUGUIS.Count - 1);
     }
@@ -77,12 +78,13 @@ public class AIController : MonoBehaviour
     {
         if (!IsControlable)
             return;
-       
+        if (!Runner.follow)
+            return;
        
         Runner.followSpeed += _aiSpeed * Time.deltaTime * 0.1f;
-        if (Runner.followSpeed >= PlayerController.Instance.MaxSpeed / 2 )
+        if (Runner.followSpeed >= PlayerController.Instance.MaxSpeed / 3 )
         {
-            Runner.followSpeed -= PlayerController.Instance.Runner.followSpeed / 1.2f ;
+            Runner.followSpeed = PlayerController.Instance.Runner.followSpeed / 1.3f ;
         }
         
     }
