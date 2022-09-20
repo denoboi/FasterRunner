@@ -67,7 +67,7 @@ public class AIController : MonoBehaviour
     }
     IEnumerator OnCountDownEndedCo()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0f);
         IsControlable = true;
         CalculateAISpeed();
         //MaxSpeed = SpeedMultiplier * (SpeedOMeterTexts.Instance.TextMeshProUGUIS.Count - 1);
@@ -82,7 +82,7 @@ public class AIController : MonoBehaviour
         Runner.followSpeed += _aiSpeed * Time.deltaTime * 0.1f;
         if (Runner.followSpeed >= PlayerController.Instance.MaxSpeed / 2 )
         {
-            Runner.followSpeed -= PlayerController.Instance.Runner.followSpeed / 2 ;
+            Runner.followSpeed -= PlayerController.Instance.Runner.followSpeed / 1.2f ;
         }
         
     }

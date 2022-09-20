@@ -10,7 +10,7 @@ public class SecondCountdown : MonoBehaviour
    
     public float CountDownTime { get; private set; }
 
-    private const float MAX_COUNTDOWN = 30;
+    private const float MAX_COUNTDOWN = 25;
 
     public TextMeshProUGUI CdownText;
     

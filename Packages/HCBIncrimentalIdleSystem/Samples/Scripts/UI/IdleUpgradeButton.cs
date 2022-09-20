@@ -67,6 +67,7 @@ namespace HCB.IncrimantalIdleSystem.Examples
             GameManager.Instance.PlayerData.CurrencyData[ExchangeType.Coin] -= (int)IdleStat.CurrentCost;
             EventManager.OnCurrencyInteracted.Invoke(IdleStat.ExchangeType, GameManager.Instance.PlayerData.CurrencyData[IdleStat.ExchangeType]);
             base.UpgradeStat();
+            EventManager.OnPlayerDataChange.Invoke();
             Button.interactable = GameManager.Instance.PlayerData.CurrencyData[IdleStat.ExchangeType] > IdleStat.CurrentCost;
             StatLevelText.SetText("lvl " + (IdleStat.Level + 1));
             StatCostText.SetText(IdleStat.CurrentCost.ToString());

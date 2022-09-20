@@ -12,32 +12,20 @@ public class DistanceCheck : MonoBehaviour
         Instance = this;
     }
 
-   
+
     public float CurrentDistance { get; private set; }
-    
+
     public const float TOTAL_DISTANCE = 5600f;
     private Vector3 _defaultPos;
 
-    
- 
+
     private void Start()
     {
-        
-            
         _defaultPos = transform.position;
     }
- 
+
     private void Update()
     {
-       
         CurrentDistance = Vector3.Distance(_defaultPos, transform.position);
-       
-        Debug.Log("Total distance travelled:" + CurrentDistance ) ;
     }
- 
-    private void OnDestroy()
-    {
-        Debug.Log("Total distance travelled:" + CurrentDistance ) ;
-    }
-
 }

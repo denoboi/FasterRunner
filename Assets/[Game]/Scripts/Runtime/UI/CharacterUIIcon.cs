@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using HCB.Core;
 using HCB.Utilities;
 using JetBrains.Annotations;
 using UnityEngine;
@@ -23,6 +24,18 @@ public class CharacterUIIcon : MonoBehaviour
 
     private const float MIN_VAL3 = 4200;
     private const float MAX_VAL3 = 5600;
+
+    private void OnEnable()
+    {
+        LevelManager.Instance.OnLevelFinish.AddListener(()=> Destroy(gameObject));
+    }
+
+    private void OnDisable()
+    {
+        LevelManager.Instance.OnLevelFinish.RemoveListener(()=> Destroy(gameObject));
+
+    }
+
 
     private void Start()
     {
