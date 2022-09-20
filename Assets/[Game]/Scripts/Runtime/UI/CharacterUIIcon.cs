@@ -1,13 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using HCB.Core;
 using HCB.Utilities;
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterUIIcon : MonoBehaviour
 {
+    public Image CharacterImage;
     private RectTransform _rectTransform;
+
+    private DistanceCheck _distanceCheck;
 
     [SerializeField] private List<RoadLayout> RoadLayouts = new List<RoadLayout>();
 
@@ -20,6 +25,18 @@ public class CharacterUIIcon : MonoBehaviour
     private const float MIN_VAL3 = 4200;
     private const float MAX_VAL3 = 5600;
 
+    private void OnEnable()
+    {
+        LevelManager.Instance.OnLevelFinish.AddListener(()=> Destroy(gameObject));
+    }
+
+    private void OnDisable()
+    {
+        LevelManager.Instance.OnLevelFinish.RemoveListener(()=> Destroy(gameObject));
+
+    }
+
+
     private void Start()
     {
         _rectTransform = GetComponent<RectTransform>();
@@ -29,16 +46,22 @@ public class CharacterUIIcon : MonoBehaviour
 
     private void Update()
     {
-        if (DistanceCheck.Instance == null)
+        if (_distanceCheck == null)
             return;
         CheckDistance();
+    }
+
+    public void Setup(DistanceCheck distanceCheck, Sprite icon)
+    {
+        _distanceCheck = distanceCheck;
+        CharacterImage.sprite = icon;
     }
 
     private void DistanceToMove(Transform startPoint, Transform endPoint, float minValue,
         float maxValue)
     {
       
-        float distanceToGo = HCBUtilities.Remap(DistanceCheck.Instance.CurrentDistance, minValue,
+        float distanceToGo = HCBUtilities.Remap(_distanceCheck.CurrentDistance, minValue,
             maxValue, startPoint.position.x, endPoint.position.x);
         
         
@@ -58,7 +81,7 @@ public class CharacterUIIcon : MonoBehaviour
         Transform endPoint = RoadLayouts[0].EndPoint;
 
 
-        if (DistanceCheck.Instance.CurrentDistance >= MIN_VAL2 && DistanceCheck.Instance.CurrentDistance < MAX_VAL2)
+        if (_distanceCheck.CurrentDistance >= MIN_VAL2 && _distanceCheck.CurrentDistance < MAX_VAL2)
         {
             minValue = MIN_VAL2;
             maxValue = MAX_VAL2;
@@ -70,8 +93,8 @@ public class CharacterUIIcon : MonoBehaviour
        
         }
 
-        else if (DistanceCheck.Instance.CurrentDistance >= MIN_VAL3 &&
-                 DistanceCheck.Instance.CurrentDistance < MAX_VAL3)
+        else if (_distanceCheck.CurrentDistance >= MIN_VAL3 &&
+                 _distanceCheck.CurrentDistance < MAX_VAL3)
         {
             minValue = MIN_VAL3;
             maxValue = MAX_VAL3;

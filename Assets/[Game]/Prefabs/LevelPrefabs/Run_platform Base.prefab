@@ -328,11 +328,11 @@ MonoBehaviour:
     colliders: []
     _isRoot: 0
   bounds:
-    center: {x: 0, y: 3.5713353, z: 0.29611588}
-    extents: {x: 5, y: 8.571339, z: 100.32611}
-    max: {x: 5, y: 12.142674, z: 100.62223}
+    center: {x: 0, y: 3.5713353, z: 0.57027817}
+    extents: {x: 5, y: 8.571339, z: 100.60028}
+    max: {x: 5, y: 12.142674, z: 101.170555}
     min: {x: -5, y: -5.000004, z: -100.03}
-    size: {x: 10, y: 17.142677, z: 200.65222}
+    size: {x: 10, y: 17.142677, z: 201.20056}
   builders: []
   unpacked: 0
   alwaysDraw: 0
@@ -397,7 +397,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5484792668086148856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.05, y: 5.92, z: 100.14}
+  m_LocalPosition: {x: -0.05, y: 5.92, z: 98.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 353757545136198142}
@@ -448,6 +448,14 @@ PrefabInstance:
     - target: {fileID: 3516177781017482958, guid: 8b19e350f64099543986bf55b9b93b07, type: 3}
       propertyPath: m_Name
       value: GateA_Glass_geo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4024471158785559008, guid: 8b19e350f64099543986bf55b9b93b07, type: 3}
+      propertyPath: m_Size.z
+      value: 0.75881124
+      objectReference: {fileID: 0}
+    - target: {fileID: 4024471158785559008, guid: 8b19e350f64099543986bf55b9b93b07, type: 3}
+      propertyPath: m_Center.z
+      value: 0.1315643
       objectReference: {fileID: 0}
     - target: {fileID: 9208770990518712964, guid: 8b19e350f64099543986bf55b9b93b07, type: 3}
       propertyPath: m_RootOrder
