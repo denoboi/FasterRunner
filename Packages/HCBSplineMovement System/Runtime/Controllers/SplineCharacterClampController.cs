@@ -12,6 +12,8 @@ namespace HCB.SplineMovementSystem
         private Vector3 _targetRotation = Vector3.zero;
         protected override void Update()
         {
+            if (SplineCharacter == null)
+                return;
             if (!SplineCharacter.IsControlable)
                 return;
 

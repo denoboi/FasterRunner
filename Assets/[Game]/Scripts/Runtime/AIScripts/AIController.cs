@@ -80,19 +80,19 @@ public class AIController : MonoBehaviour
             return;
         if (!Runner.follow)
             return;
-       
-        Runner.followSpeed += _aiSpeed * Time.deltaTime * 0.1f;
-        if (Runner.followSpeed >= PlayerController.Instance.MaxSpeed / 3 )
+
+        Runner.followSpeed += _aiSpeed * Time.deltaTime * Random.Range(0.05f, 0.1f);
+        if (Runner.followSpeed >= PlayerController.Instance.MaxSpeed * Random.Range(0.01f, 5f))
         {
-            Runner.followSpeed = PlayerController.Instance.Runner.followSpeed / 1.3f ;
+            Runner.followSpeed -= PlayerController.Instance.Runner.followSpeed / Random.Range(10f,100f) ;
         }
         
     }
 
     void CalculateAISpeed()
     {
-        _minAiSpeed = PlayerController.Instance.SpeedMultiplier;
-        _maxAISpeed = PlayerController.Instance.MaxSpeed / 20;
+        _minAiSpeed = PlayerController.Instance.SpeedMultiplier * Random.Range(3f, 5f);
+        _maxAISpeed = PlayerController.Instance.MaxSpeed / Random.Range(40f, 120f);
         _aiSpeed = Random.Range(_minAiSpeed, _maxAISpeed);
     }
     
