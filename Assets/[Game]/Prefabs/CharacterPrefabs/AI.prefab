@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 4120322005834980323}
   - component: {fileID: 8873565528168036380}
   - component: {fileID: 160817498269464090}
-  - component: {fileID: 2038184644449766720}
+  - component: {fileID: 3064747279478694840}
   - component: {fileID: 3922263186052710695}
   - component: {fileID: 6799040896797128236}
   m_Layer: 0
@@ -451,9 +451,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0fd26eda2927b6449f0ac67648ffb1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DistanceCheck: {fileID: 6799040896797128236}
-  CharacterIcon: {fileID: 0}
---- !u!114 &2038184644449766720
+  CharacterIcon: {fileID: 21300000, guid: 848f645da98e938458855096fb14d50c, type: 3}
+--- !u!114 &3064747279478694840
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -462,10 +461,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7088628521487069971}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 258df93b6fbe42c4e9d00f10b44daabf, type: 3}
+  m_Script: {fileID: 11500000, guid: f4e9e85f3beb11a40b9e80427a18964e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleStat: {fileID: 11400000, guid: 9f152970f0fdb5b4bb67d46b387f052b, type: 2}
+  _leanSpeed: 0
+  timeToMove: 0
+  Graphic: {fileID: 0}
 --- !u!54 &3922263186052710695
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -24,11 +24,13 @@ public class AISpawner : MonoBehaviour
 
     IEnumerator SpawnAICo()
     {
-        yield return new WaitForSeconds(Random.Range(3f,7f));
+        yield return new WaitForSeconds(Random.Range(7f, 10f));
         foreach (var AI in AIs)
         {
             GameObject ai = Instantiate(AI);
         }
+
+      
         EventManager.OnSupAIInstantiated.Invoke();
 
     }
