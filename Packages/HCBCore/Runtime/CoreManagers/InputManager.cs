@@ -107,7 +107,7 @@ namespace HCB.Core
                 if (tapDuration < 0.2f)
                 {
                     OnTapInput.Invoke();
-                    HapticManager.Haptic(HapticTypes.SoftImpact);
+                    HapticManager.Haptic(HapticTypes.RigidImpact);
                     //Debug.Log("Tap " + tapDuration);
                 }
                 tapDuration = 0;

@@ -9,7 +9,7 @@ public class SecondCountdown : MonoBehaviour
 {
     public static SecondCountdown Instance;
     private Coroutine _countDownCoroutine;
-    public float CountDownTime { get; private set; }
+    public float CountDownTime { get; set; }
 
     private const float MAX_COUNTDOWN = 25;
 
@@ -30,6 +30,8 @@ public class SecondCountdown : MonoBehaviour
 
     private void OnDisable()
     {
+        if (Managers.Instance == null)
+            return;
         EventManager.OnFirstCountDownEnded.RemoveListener(StartCountdown);
         LevelManager.Instance.OnLevelFinish.RemoveListener(ResetCountDown);
 

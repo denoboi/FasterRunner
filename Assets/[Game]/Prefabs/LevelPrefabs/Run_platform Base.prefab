@@ -328,9 +328,9 @@ MonoBehaviour:
     colliders: []
     _isRoot: 0
   bounds:
-    center: {x: 0, y: 3.5713353, z: 0.57027817}
+    center: {x: 0, y: 3.5713353, z: 0.570282}
     extents: {x: 5, y: 8.571339, z: 100.60028}
-    max: {x: 5, y: 12.142674, z: 101.170555}
+    max: {x: 5, y: 12.142674, z: 101.17056}
     min: {x: -5, y: -5.000004, z: -100.03}
     size: {x: 10, y: 17.142677, z: 201.20056}
   builders: []
@@ -451,11 +451,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4024471158785559008, guid: 8b19e350f64099543986bf55b9b93b07, type: 3}
       propertyPath: m_Size.z
-      value: 0.75881124
+      value: 0.8860679
       objectReference: {fileID: 0}
     - target: {fileID: 4024471158785559008, guid: 8b19e350f64099543986bf55b9b93b07, type: 3}
       propertyPath: m_Center.z
-      value: 0.1315643
+      value: 0.067935966
       objectReference: {fileID: 0}
     - target: {fileID: 9208770990518712964, guid: 8b19e350f64099543986bf55b9b93b07, type: 3}
       propertyPath: m_RootOrder

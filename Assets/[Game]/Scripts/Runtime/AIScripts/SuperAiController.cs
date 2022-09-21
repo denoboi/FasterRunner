@@ -22,7 +22,8 @@ public class SuperAiController : MonoBehaviour
 
    void Move()
    {
-      Runner.followSpeed = Random.Range(50f, 500f);
+      Run.After(Random.Range(1f,5f), ()=> Runner.followSpeed = Random.Range(30f, 500f));
    }
    
+
 }
